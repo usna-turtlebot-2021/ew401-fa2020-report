@@ -33,6 +33,11 @@ Our functionality requirements, in hierarchical order, are as follows: must be a
 \subsection{2.3. Constraints}
 Our robot needs to operate under a certain power threshold – the quantity is yet to be determined. Our robot also must withstand up to 15 feet of water pressure. Our robot needs to fit within certain dimensions to help the design process and functionality. Additionally, our robot needs to operate regularly with zero mechanical failures. 
 \subsection{2.4. Objectives, Pairwise Comparison Chart, and Weightings}
+
+\begin{figure}
+\caption{Objectives, PCC and weightings}
+\label{fig:obj}
+\end{figure}
 %Must be able to move forward on land
 %Must be able to move forward in the water
 %Must be able to turn left and right in the water
@@ -135,9 +140,12 @@ Our robot needs to operate under a certain power threshold – the quantity is y
 %0
 %1
 %
-%        2.5. Metrics 
-%
-%
+
+\subsection{2.5. Metrics}
+\begin{figure}
+\caption{Metrics}
+\label{fig:metrics}
+\end{figure}
 %Mobility in water
 %Score
 %Metric
@@ -207,11 +215,12 @@ Our robot needs to operate under a certain power threshold – the quantity is y
 %Uses less than 10 motors with multiple types of motors, the fins are the different, and the shoulder leg/mechanism are different 
 
 \section{3. Related Work}
-The Licht Turtlebot [2], designed by MIT researcher Dr. Stephen Carl Licht, features biometric oscillating foil propulsion to enhance underwater vehicle agility and maneuverability. The robot has numerous features we hope to emulate, as well as shortcomings to improve upon. Its strengths include: Highly agile at low speeds, highly maneuverable at cruising speeds, and it is built for swimming and very high performing in that category. Its weaknesses are: The actuators do not allow for travel on land, it does not have enough degrees of freedom for our movement, and its large scale requires more power and manpower to operate. 
+The Licht Turtlebot \cite{licht2008biomimetic}, designed by MIT researcher Dr. Stephen Carl Licht, features biometric oscillating foil propulsion to enhance underwater vehicle agility and maneuverability. The robot has numerous features we hope to emulate, as well as shortcomings to improve upon. Its strengths include: Highly agile at low speeds, highly maneuverable at cruising speeds, and it is built for swimming and very high performing in that category. Its weaknesses are: The actuators do not allow for travel on land, it does not have enough degrees of freedom for our movement, and its large scale requires more power and manpower to operate. 
 
-The Naro Tartaruga Bot [3] is another related project. This turtlebot consists of four flapping foils, two pectoral fins and two rear fins, and eight sensors, to include a pressure sensor, temperature sensor, GPS, gyro, compass, encoders, and water leakage/flow sensors. The fins have three degrees of freedom, allowing for greater mobility and maneuverability. Its strengths include that it will very closely resemble the locomotion of a Sea Turtle, which is our end goal. It will also provide unique means of maneuvering that may prove much more agile, efficient, and smooth. Its main weakness is having different size fins with irregular shapes may pose a problem with creating the optimal speed and sweeping angles to achieve the proper movement patterns.
+The Naro Tartaruga Bot \cite{siegenthaler2013system} is another related project. This turtlebot consists of four flapping foils, two pectoral fins and two rear fins, and eight sensors, to include a pressure sensor, temperature sensor, GPS, gyro, compass, encoders, and water leakage/flow sensors. The fins have three degrees of freedom, allowing for greater mobility and maneuverability. Its strengths include that it will very closely resemble the locomotion of a Sea Turtle, which is our end goal. It will also provide unique means of maneuvering that may prove much more agile, efficient, and smooth. Its main weakness is having different size fins with irregular shapes may pose a problem with creating the optimal speed and sweeping angles to achieve the proper movement patterns.
 
-The Flipperbot [1] is a two-limbed robot operated by dual servo motors connected to a hull-mounted bending shoulder mechanism. It was designed to test flipper-based terrestrial locomotion. Its strengths include a simple mechanical design and its proven example for sustained travel on land. However, it is unable to efficiently travel in water like other models. 
+The Flipperbot \cite{mazouchova2013flipper} is a two-limbed robot operated by dual servo motors connected to a hull-mounted bending shoulder mechanism. It was designed to test flipper-based terrestrial locomotion. Its strengths include a simple mechanical design and its proven example for sustained travel on land. However, it is unable to efficiently travel in water like other models. 
+
 The purpose of each of these projects was to further the technology and design of amphibious vehicles through the study of nature. Our robot design needs swimming capabilities, terrestrial locomotion with flippers, and proper system integration and fin trajectory. Collectively, these projects provide examples of all our necessary features. 
 
 \section{4. Conceptual Designs}
