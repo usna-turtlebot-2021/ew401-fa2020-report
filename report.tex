@@ -1,0 +1,560 @@
+
+
+EW401 Final Report
+
+Comparative Biomechanics: Turtle Bot  
+By
+Midshipman 1/C George Ashley, Midshipman 1/C Graham Brothers, and Midshipman 1/C Cameron Douglas
+Contact Information: consider including civilian e-mail addresses in case a group from next year’s class would like to continue your project and would like to contact you with questions.
+
+A Capstone Project Report Submitted to the Faculty of
+The Weapons, Robotics and Control Engineering Department
+United States Naval Academy, Annapolis, Maryland
+
+Course:  EW401 (Fall) 
+Faculty Advisor: Assistant Professor Evangelista, Ph.D
+Department Chair: Prof Brad Bishop
+Outside Sponsor:  (If applicable, otherwise remove)
+
+Date
+ 
+Contents
+1.	Introduction	6
+1.1.	Customer Interview	6
+1.2.	Additional Background Research	6
+2.	Problem Statement	6
+2.1.	Problem Statement	6
+2.2.	Functions	6
+2.3.	Constraints	6
+2.4.	Objectives, Pairwise Comparison Chart, and Weightings	6
+2.5.	Metrics	7
+3.	Related Work	7
+4.	Conceptual Designs	7
+4.1.	Concept 1:  Title	7
+4.2.	Concept 2:  Title	7
+4.3.	Concept 3:  Title	7
+4.4.	Decision Matrix	7
+5.	Ethical Considerations	7
+6.	Engineering Standards and Specifications	8
+7.	Preliminary Detailed Design	8
+7.1.	Component Selection	8
+7.2.	Parts List and Budget	8
+7.3.	Mechanical Drawings	8
+7.4.	Circuit Diagrams	9
+7.5.	Prototypes	9
+7.6.	Software Structure	9
+7.7.	Simulations	10
+8.	Proposed Work	10
+8.1.	Work Breakdown Structure	10
+8.2.	Timeline	10
+8.3.	Risk management	10
+8.4.	Demonstration and Testing Plan	11
+9.	Benchtop Demonstration	11
+9.1.	Activities	11
+9.2.	Results	11
+
+
+Abstract— Your abstract should summarize the objective of your capstone project.  A good guideline is to include a one sentence summary for each section of the report, and dedicate slightly more space to report the results.  Provide specific numerical results or performance measures when possible.  It should be self-contained and as close to 250 words as possible (can be check by highlighting and selecting Review/Word Count. 
+
+    1. Introduction
+        1.1. Customer Interview
+Our customer is Dr. William Sandberg, who is currently a professor at George Mason University and a maritime research specialist. He works with RDSA and has experience in foils and fins as they relate to our project. Depending on the success of our project, one of his potential plans for our product is to forward the design to government contractors for further development or research purposes. He will also potentially use this in his own research or instruction. The highlights from our interview include the matriculation and application our project will have, the difficulty of waterproofing, the material of the fins and outer body, an advised timeline, and greater insight on the movement of the fins. We found that these types of projects are the foundation of work much later that sees real application and use. Waterproofing came up as a serious risk in terms of the design feasibility of our project, we came to the conclusion modularity needs to take priority in our design to combat the difficulty of waterproofing. We found that through our consultation the opportunities for design are not limited due to the resources at our disposal to create inexperienced materials/ components for our project. We came to the conclusion that in order to effectively design our bot we need to structure the design process to effectively incorporate modularity and a process of feedback. Finally we were advised on various prevalent research that will be useful in our design of our finned bot. Our point of view statement is: A mission platform conducting surface or undersea operations needs to be able to maneuver a deployed UAV accurately at low speeds in order to recover them in a way that is much safer and cost-effective than the current means. 
+        1.2. Additional Background Research
+Historically autonomous underwater vehicles have followed commonly accepted forms of propulsion, to include conventional propeller controlled UUVs. These systems have limitations in their mission scope due to capabilities they possess to include lack of low speed maneuverability and inherent limitation of these vehicles to transition from the aquatic environment to that of the terrestrial. These lack of features in conventional robotic systems present a need for significant advancement of technology and design of UUVs. Researchers can turn towards living organisms for inspiration to design energy efficient propulsion systems with high maneuverability and amphibious capabilities, 550 million years of evolution has given us numerous sources to draw ideas from. As Dr. Stephen Carl Licht a researcher at MIT put it “To push the operating range of underwater vehicles, particularly small autonomous robots, into these chaotic margins we must close the performance gap between nature and machine” Many organisms to include; sea turtles, seals and penguins for example all have amphibious capabilities and low speed maneuverability each however has achieved this capability with its own unique design. Our research presents three projects which will explore the idea of drawing on nature as a resource in the design and advancement of technology of UUVs. 
+The first project explored biomimetic oscillating foil propulsion to enhance underwater vehicle agility and maneuverability. The Licht Turtlebot, designed by MIT researcher Dr. Stephen Carl Licht and his team designed an autonomous underwater vehicle (AUV) inspired by the swimming abilities of sea turtles powered by four fins. Through the use of biometric actuation this project has improved the maneuverability of AUVs, particularly in its ability to both maneuver at cruising speeds and remain agile at lower speeds. The 2nd project explored system integration and fin trajectory design for a robotic sea-turtle. The Naro-Tartaruga bot team designed a robotic platform which utilizes fin propulsion actuators that imitate a sea-turtle while implementing basic concepts of control for fin locomotion. As described by the Naro-Tartaruga bot team this project's motivation was “the fluent and aesthetic locomotion of marine animals... Flexibility, agility, efficiency, high speeds, and endurance are some of the main attributes that can be used to describe fin-locomotion concepts.” The 3rd project explored flipper-driven terrestrial locomotion of a sea turtle-inspired robot. The Flipper Bot team through the study of hatchling sea turtles design a robotic platform to mimic the territorial based locomotion of hatchling sea turtles.  As described by the FlipperBot team this project's motivation was “To discover principles of flipper-based terrestrial locomotion we study the mechanics of a hatchling sea turtle-inspired robot [1]” The purpose of each of these projects was to further the technology and design of amphibious vehicles through the study of nature.
+    2. Problem Statement
+        2.1. Problem Statement
+To develop and design an amphibious vehicle that is able to accurately maneuver at low speeds in still water, crawl in a variety of water depths, and transition  from the locomotion of swimming to crawling seamlessly utilizing locomotion of sea turtles as inspiration.
+        2.2. Functions
+Our functionality requirements, in hierarchical order, are as follows: must be able to move forward in the water, must be able to turn left and right in the water, must be able to move forward on land, must be able to turn left and right on land, and must be able to crab left and right in the water.
+        2.3. Constraints
+Our robot needs to operate under a certain power threshold – the quantity is yet to be determined. Our robot also must withstand up to 15 feet of water pressure. Our robot needs to fit within certain dimensions to help the design process and functionality. Additionally, our robot needs to operate regularly with zero mechanical failures. 
+
+        2.4. Objectives, Pairwise Comparison Chart, and Weightings 
+
+
+
+Must be able to move forward on land
+Must be able to move forward in the water
+Must be able to turn left and right in the water
+Must be able to turn left and right on land 
+Must be able to crab left and right in the water
+Score
+Decision matrix weights
+Must be able to move forward on land
+**
+0
+0
+1
+1
+2
+3
+Must be able to move forward in the water
+1
+**
+1
+1
+1
+4
+5
+Must be able to turn left and right in the water
+0
+0
+**
+1
+1
+2
+3
+Must be able to turn left and right on land 
+0
+0
+0
+**
+1
+1
+2
+Must be able to crab left and right in the water
+0
+0
+0
+0
+**
+0
+1
+
+
+
+Accurately maneuvers
+Transitions seamlessly
+
+Inexpensive
+
+Controllable
+
+Maintainable /Reliable
+
+Score
+Decision matrix weights
+Accurately maneuvers
+**
+1
+1
+0
+1
+3
+4
+Transitions seamlessly
+0
+**
+1
+0
+1
+2
+3
+Inexpensive
+0
+0
+**
+0
+1
+1
+2
+Controllable
+1
+1
+1
+**
+1
+4
+5
+Modularity
+0
+0
+0
+0
+**
+0
+1
+
+        2.5. Metrics 
+
+
+Mobility in water
+Score
+Metric
+4
+Swim at speeds of 1 body length of the robot per second
+3
+Swim at speeds of 3/4 body length of the robot per second
+2
+Swim at speeds of 1/2 body length of the robot per second
+1
+Swim at speeds of 1/4 body length of the robot per second
+0
+Is not able to swim 
+
+
+Mobility on land
+Score
+Metric
+4
+Crawl at speed of 1/3 body length of the robot per second
+3
+Crawl at speed of 1/4 body length of the robot per second
+2
+Crawl at speed of 1/6 body length of the robot per second
+1
+Crawl at speed of 1/10 body length of the robot per second
+0
+Is not able to crawl
+
+
+
+
+
+
+
+
+
+
+
+Amphibious Capability
+Score
+Metric
+4
+Operate in shallow water level 10% of height of the robot, transition from water to land seamlessly 
+3
+Operate in shallow water level 7% of height of the robot, transition from water to land is labored
+2
+Operate in shallow water level 5% of height of the robot, regularly able to transition water to land
+1
+Irregularly able to transition from water to land 
+0
+Cannot operate in any amphibious fashion and unable to transition from water to land 
+
+
+Simplicity 
+Score
+Metric
+4
+Uses less than 8 of same motors , the fins all the same, and the shoulder/leg mechanisms are the same 
+3
+Uses less than 8 motors with multiple types of motors, the fins are the same, and the  shoulder leg/mechanism are the same 
+2
+Uses less than 8 motors with multiple types of motors, the fins are the different, and the shoulder leg/mechanism are the same 
+1
+Uses less than 10 motors with multiple types of motors, the fins are the different, and the shoulder leg/mechanism are the same 
+0
+Uses less than 10 motors with multiple types of motors, the fins are the different, and the shoulder leg/mechanism are different 
+
+
+
+    3. Related Work
+The Licht Turtlebot [2], designed by MIT researcher Dr. Stephen Carl Licht, features biometric oscillating foil propulsion to enhance underwater vehicle agility and maneuverability. The robot has numerous features we hope to emulate, as well as shortcomings to improve upon. Its strengths include: Highly agile at low speeds, highly maneuverable at cruising speeds, and it is built for swimming and very high performing in that category. Its weaknesses are: The actuators do not allow for travel on land, it does not have enough degrees of freedom for our movement, and its large scale requires more power and manpower to operate. 
+The Naro Tartaruga Bot [3] is another related project. This turtlebot consists of four flapping foils, two pectoral fins and two rear fins, and eight sensors, to include a pressure sensor, temperature sensor, GPS, gyro, compass, encoders, and water leakage/flow sensors. The fins have three degrees of freedom, allowing for greater mobility and maneuverability. Its strengths include that it will very closely resemble the locomotion of a Sea Turtle, which is our end goal. It will also provide unique means of maneuvering that may prove much more agile, efficient, and smooth. Its main weakness is having different size fins with irregular shapes may pose a problem with creating the optimal speed and sweeping angles to achieve the proper movement patterns.
+The Flipperbot [1] is a two-limbed robot operated by dual servo motors connected to a hull-mounted bending shoulder mechanism. It was designed to test flipper-based terrestrial locomotion. Its strengths include a simple mechanical design and its proven example for sustained travel on land. However, it is unable to efficiently travel in water like other models. 
+The purpose of each of these projects was to further the technology and design of amphibious vehicles through the study of nature. Our robot design needs swimming capabilities, terrestrial locomotion with flippers, and proper system integration and fin trajectory. Collectively, these projects provide examples of all our necessary features. 
+    4. Conceptual Designs
+        4.1. Design Concept 1: 
+
+Inner mechanics - There will be only a microprocessor and sensors to include an IMU.  As communications and power will be achieved through the use of tethering. 
+
+Fins - Will be unique in form in comparison per set of pectoral and lower fins, they will be constructed of a semi-stiff composite plastic. They will be larger in comparison to the scale depicted in the drawing to the left. 
+
+Outer body - Will be constructed of stiff composite plastic that will add buoyancy if needed, another layer of waterporectection, and make the turtlebot have less hydrodynamic drag. 
+
+Shoulder mechanism - Composed of two servo motors connected to a dc motor contained in a stationary. This will allow the front flippers to both be able to properly replicate the locomotive  gait of the pectoral fins of sea turtle swimming while also enabling the flippers to aid in crawling .
+
+Leg mechanism - Composed of three servo motors connected in conjunction to the body of turtle bot. The three servos will allow these flippers to aid in providing thrust for swimming and enable the locomotive terrestrial gait of sea turtles.   
+
+
+
+
+
+
+
+
+Means 1
+Means 2
+Means 3
+Locomotion in water 
+Combination of servo and DC motors in shoulder and leg mechanisms 
+DC motors in shoulder and leg mechanisms
+Servo motors in shoulder and leg mechanisms
+Locomotion on land 
+
+Two servos motors in shoulder mechanism connected in linkage 
+Three servos motors in shoulder mechanism connected in linkage 
+Two servos and DC motor shoulder mechanism connected in linkage 
+Power supply 
+Powered completely within bot ( Lithium Ion batteries )
+Power tethered to the bot 
+**
+Outer body 
+Rigid Composite plastic 
+Soft composite plastic
+**
+Communication
+ And Control
+Microcontroller contained with bot/ communications tethered to bot
+Everything contained within bot 
+**
+Fins 
+Rigid Composite plastic
+Passively deformable material (leading edge stiffer than trailing) 
+Fin system that allows the fin to be flexible or rigid upon command 
+
+        4.2. Design Concept 2: 
+
+Inner mechanics - There will need to be many mechanics contained within a watertight seal in the turtlebot to include microprocessor, battery, wireless connector, circuit board, and relevant sensors to include an IMU.
+
+Leg and shoulder mechanism - Composed of two servo motors connected in conjunction to the body of turtle bot. The two servos will allow these flippers to aid in providing thrust for swimming and enable the locomotive terrestrial gait of sea turtles.  
+
+Fins - All four fins will be the same dimensions and they will be constructed of a semi flexible plastic that allows the fin to be flexible or rigid when needed . They will be larger in comparison to the scale depicted in the drawing to the left. 
+
+
+Means 1
+Means 2
+Means 3
+Locomotion in water 
+Combination of servo and DC motors in shoulder and leg mechanisms 
+DC motors in shoulder and leg mechanisms
+Servo motors in shoulder and leg mechanisms
+Locomotion on land 
+
+Two servos motors in shoulder mechanism connected in linkage 
+Three servos motors in shoulder mechanism connected in linkage 
+Two servos and DC motor shoulder mechanism connected in linkage 
+Power supply 
+Powered completely within bot ( Lithium Ion batteries )
+Power tethered to the bot 
+**
+Outer body 
+Rigid Composite plastic 
+Soft composite plastic
+**
+Communication
+ And Control
+Microcontroller contained with bot/ communications tethered to bot
+Everything contained within bot 
+**
+Fins 
+Rigid Composite plastic
+Passively deformable material (leading edge stiffer than trailing) 
+Fin system that allows the fin to be flexible or rigid upon command 
+
+        4.3. Design Concept 3: 
+
+Inner mechanics - There will need to be many mechanics contained within a watertight seal in the turtlebot to include microprocessor, battery, wireless connector, circuit board, and relevant sensors to include an IMU.
+Outer body - Will be constructed of soft composite plastic that will add buoyancy if needed, another layer of water protection, and make turtlebot have less hydrodynamic drag. 
+Leg and shoulder mechanism - Composed of three servo motors connected in conjunction to the body of turtle bot. The three servos will allow these flippers to aid in providing thrust for swimming and enable the locomotive terrestrial gait of sea turtles.
+
+
+Means 1
+Means 2
+Means 3
+Locomotion in water 
+Combination of servo and DC motors in shoulder and leg mechanisms 
+DC motors in shoulder and leg mechanisms
+Servo motors in shoulder and leg mechanisms
+Locomotion on land 
+
+Two servos motors in shoulder mechanism connected in linkage 
+Three servos motors in shoulder mechanism connected in linkage 
+Two servos and DC motor shoulder mechanism connected in linkage 
+Power supply 
+Powered completely within bot ( Lithium Ion batteries )
+Power tethered to the bot 
+**
+Outer body 
+Rigid Composite plastic 
+Soft composite plastic
+**
+Communication
+ And Control
+Microcontroller contained with bot/ communications tethered to bot
+Everything contained within bot 
+**
+Fins 
+Rigid Composite plastic
+Passively deformable material (leading edge stiffer than trailing) 
+Fin system that allows the fin to be flexible or rigid upon command 
+
+        4.4. Decision Matrix
+
+Decision Matrix :Design Constraints (C)
+ &
+Objectives (O)
+Weight
+Design Concept 
+one 
+Design Concept 
+two
+Design Concept Three
+Low power (C)
+**
+Yes
+Yes
+Yes
+Waterproof(C)
+**
+Yes
+Yes
+Yes
+Small Size (C)
+**
+Yes
+Yes
+Yes
+Durable(C)
+**
+Yes
+Yes
+Yes
+Controllable(O)
+5
+15/20 -75
+11/20 - 55
+8/20-40
+Maneuverable(O)
+4
+12/16 - 48
+7/16- 28
+12/16-48
+Beach Transition(O)
+3
+9/12 - 27
+4/12 -12
+11/12- 33
+Modularity(O)
+1
+8/12 - 8
+7/12- 7
+5/12-5
+Inexpensive(O)
+2
+1/8 - 2
+5/8- 10
+2/8- 4
+Total
+**
+160
+112
+130
+
+Our winning design is Design Concept One. It was ranked highest overall based on our objectives of controllability, maneuverability, beach transition, modularity, and cost. 
+    5. Ethical Considerations
+Briefly list the ethical issues or responsibilities that apply to this project, such as safety, documentation, or potential unethical ways in which the product could be used
+Describe some ways in which those issues shaped your proposal.
+Connect these considerations to the considerations from Section 1.2 Motivation.
+  Incorporate the IEEE Code of Ethics or the Professional Engineer’s Code into your discussion when possible. 
+    6. Engineering Standards and Specifications
+Discuss an engineering standard or specification that is applicable to at least one component of your design.
+    7. Preliminary Detailed Design
+        7.1. Component Selection
+For any components not discussed in the previous section, explain how you selected all parts such as actuators, power supplies, computing resources, and sensors include a morph chart.  Provide engineering justifications for your choices.  
+        7.2. Parts List and Budget
+
+
+        7.3. Mechanical Drawings
+Include dimensioned drawings of parts you plan on building or having the shop fabricate.   Neat hand drawings are acceptable. 
+
+
+Figure 1: This is an example of a dimensioned mechanical drawing (left) and an annotated photo (right).   Note this caption was created using References/Insert Caption, which allow MS Word to automatically number and cross reference your figures.
+
+
+
+
+
+
+
+
+
+
+
+
+        7.4. Circuit Diagrams
+Provide circuit diagrams of any electronics subsystems you will build.
+
+Figure 2  
+        7.5. Prototypes
+Show pictures of any prototypes of scale models you made.
+        7.6. Software Structure 
+Your algorithm or controller design should be in the format of pseudo-code (see Figure 3). It is not necessary to include computer programs in their entirety, though interesting excerpts may be included in the text. Appropriately comment any included code. The documentation needs to clearly indicate what code was written by the group members versus code provided by another source (e.g. faculty, TSD, commercial or open-source software, etc.).  For larger, hierarchical programs, represent the functional organization with a flow chart or a block diagram.  For programs utilizing GUIs, screen captures of the user interface are useful.   
+
+Figure 3  Pseudo-code is one of the most compact ways to present computer programs.   Note that a “pseudo-code style” has been defined in the Style Toolbar of the template.  
+
+        7.7. Simulations
+This section could include the development of a mathematical model and/or the use of a model to predict behavior and system performance.  If you used simulation or other computer-aided design tools discuss them here. 
+
+Figure 5  This is the response of the feedback control law.   Note that it is scaled appropriately to see the interesting features, and annotated.   When importaing Matlab figures, you may need to increase the font size and line width using Matlab to improve legibility.
+    8. Proposed Work
+        8.1. Work Breakdown Structure
+
+        8.2. Timeline
+
+        8.3. Risk management
+When working with various power systems and equipment with high amounts of current, we will need to handle with care. This is especially true when we are working with electronics in the water. Additionally, while constructing our robot, we will need to use safety gear and handle with extreme care. Safety glasses and gloves will be worn at all times when machinery is being operated. 
+
+        8.4. Demonstration and Testing Plan
+Discuss your approach to testing your project, broken down by sub-system.
+Explain in detail how the metrics will be evaluated. 
+    9. Benchtop Demonstration
+
+Our Bench Demonstration will consist of a working tetrix and 3D printed TurtleBot capable of crawling. The robot will be composed of: 6 Hobby Servos, an Mbed Microcontroller, a 6V power source, a breadboard, 4 3D printed clamp linkages, and 3D printed fins. 
+        9.1. Activities
+Describe the activities you engaged in during the final weeks of the semester.
+
+        9.2. Results 
+Present the results of your benchtop testing. 
+
+References
+Instructions on how to insert references in MS Word appear in the Appendix.  The following examples show how most common materials should be referenced using the IEEE standard. Note: parenthetical descriptions should not be included in your reference entries.
+[1] 	N. Mazouchova, P. B. Umbanhowar, and D. I. Goldman, “Flipper-driven terrestrial locomotion of a sea turtle-inspired robot,” Bioinspiration & Biomimetics, vol. 8, no. 2, p. 026007, 2013. 
+[2]	S. C. Licht, “Biomimetic oscillating foil propulsion to enhance underwater vehicle agility and maneuverability,” 2008. 
+[3]	 C. Siegenthaler, C. Pradalier, F. Gunther, G. Hitz, and R. Siegwart, “System integration and fin trajectory Design for a robotic sea-turtle,” 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems, 2013. 
+
+
+Appendix:   Formatting and Style Guidelines
+Appendices are optional and should appear at the end. You may have several appendices if necessary, to include computer programs, large data sets, or detailed drawings. Be sure to note the existence of any appendices or enclosures within the relevant portion of the report text.  
+This appendix provides stylistic guidelines and MSWord tips on creating linked and cross referenced documents.  
+Abbreviations and Acronyms
+Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
+Units
+The use of SI units is encouraged. English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as “3.5-inch disk drive”. Use a zero before decimal points: “0.25”, not “.25”. Use “cm3”, not “cc”. 
+Equations
+Number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (2). Punctuate equations with commas or periods when they are part of a sentence, as in
+		α  + β  = χ.					        (2)
+Note that the equation is centered. Be sure that the symbols in your equation have been defined before or immediately following the equation. Use “(2)”, not “Eq. (2)” or “equation (2)”, except at the beginning of a sentence: “Equation (2) is . . .”
+Figures and Tables
+Place figures and tables at the top and bottom of pages. Avoid placing them in the middle of pages. Figure captions should be below the figures as shown in Figure 6; table captions should appear above the tables as shown Table 1. To insert captions select from the MS Word toolbar References/Insert Caption.  Reference the figure in the text by choosing the Insert tab and selecting Cross-reference from the Links sub-tab.  Choose the reference type that you want and be sure to select the appropriate entry in the Insert reference to pull-down list.  This will only work if you have used Insert Caption with the figure or table. This can be achieved by right-clicking on the item or from the References Menu.
+
+Table 1 Captioned Table
+Table Head
+Table Column Head
+
+Table column subhead
+Subhead
+Subhead
+copy
+More table copya
+
+
+
+
+Figure 6 Presentation of the Marsh Award, which is given each year to the best 1/C  Robotics and Control Engineering project in memory of ENS David R.  Marsh, USNA Class of 1987, in honor of his enthusiasm for his 1/C project, a voice activated robot.
+Axis Labels: Use 8 point Times New Roman for axis label or titles. Use words rather than symbols or abbreviations to avoid confusing the reader. As an example, write the quantity “Magnetization”, or “Magnetization, M”, not just “M”. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write “Magnetization (A/m)” or “Magnetization {A[m(1)]}”, not just “A/m”. 
+
+References
+Note that, while Word includes many bibliography-building tools, one of the easiest methods to build a lengthy reference list is to move to the end of your document and start a new list of references formatted as follows:
+1)  Click on the HOME tab at the top of the Word window
+2)  In the Paragraph sub-window, click on the down arrow next to the numbered list layout.
+
+
+3)  Click on the format that shows [#], OR, if that format is not available, select “Define New Number Format” from the bottom of the pop-up window.
+4)  If you had to define a new number format, select the “Number style” as “1, 2, 3, …” and change the “Number format” to [1] by typing the [ and the ] around the 1, and removing any other punctuation, as shown at right.  Select OK when done.
+5)  Type entries onto the list.  It will automatically update.
+6)  To cross-reference the list, use the method described above in the section on Figures and Tables.
+The reference/bibliography standard used in our discipline is published by IEEE, a professional engineering society dedicated to control systems, robotics, electronics, etc.  The following examples are provided in the reference section.  Note: parenthetical descriptions do not need to be included in your reference entries. 
+
+

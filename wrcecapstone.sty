@@ -1,0 +1,74 @@
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+%\usepackage{marginnote} % for editorial use
+\usepackage{sidenotes} % for editorial use
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{svg,svg-extract}
+\usepackage{booktabs}
+
+\usepackage{siunitx}
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\pound{lb}
+\DeclareSIUnit\ounce{oz}
+\DeclareSIUnit\inch{in}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\fahrenheit{F}
+\DeclareSIUnit\bit{bit}
+\DeclareSIUnit\byte{B}
+
+%\newcommand{\myroot}{../}
+\newcommand{\Later}{\textbf{Later.}}
+%\newcommand{\Calypteanna}{\emph{Calypte anna}}
+%\newcommand{\Canna}{\emph{C.~anna}}
+\newcommand{\MATLAB}{Matlab}
+\newcommand{\Matlab}{Matlab}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=violet,
+  urlcolor=blue,
+  citecolor=blue}
+
+\usepackage[plain]{fancyref}
+\renewcommand{\freffigname}{Fig.}
+\renewcommand{\Freffigname}{Fig.} 
+\renewcommand{\freftabname}{Table}
+\renewcommand{\Freftabname}{Table}
+\frefformat{plain}{\fancyrefeqlabelprefix}{(#1)} 
+\Frefformat{plain}{\fancyrefeqlabelprefix}{(#1)} 
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,
+	columns=fullflexible,
+	showstringspaces=false
+}
+\lstdefinestyle{mbedC}{
+	language=C,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{magenta}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	directivestyle=\color{red}\ttfamily,
+ 	morecomment=[l][\color{red}]{\#},
+	columns=fullflexible,
+	showstringspaces=false,
+%	frame=single
+}
+\lstdefinestyle{usnaMatlab}{
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{magenta}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+ 	morecomment=[l][\color{red}]{\#},
+	columns=fullflexible,
+	showstringspaces=false,
+	language=Matlab
+%	%backgroundcolor=\color{lightgray},
+%	frame=single
+}
+
+\usepackage[noadjust]{cite}
+
+
