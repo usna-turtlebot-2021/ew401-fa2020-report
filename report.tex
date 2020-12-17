@@ -1,22 +1,36 @@
 \documentclass[10pt]{article}
 
+\usepackage{wrcecapstone}
+\hypersetup{
+  pdfauthor={Chris Ashley, Graham Brothers, and Cameron Douglas},
+  pdftitle={TurtleBot},
+  pdfsubject={weapons, robotics, and control engineering},
+  pdfkeywords={biomechanics, sea turtle, amphibious, flapping foil}
+}
+\coursenumber{EW401}
+\student{MIDN 1/C G.~AShley, MIDN 1/C G.~Brothers, and MIDN 1/C C.~Douglas}
+\advisor{Assistant Professor D. Evangelista}
+
+
 \title{TurtleBot}
 \author{MIDN 1/C G Ashley, G Brothers, and C Douglas}
-\date{December 3, 2020}
-
-\usepackage{listings}
+\date{\printdate{12/3/2020}}
 
 \begin{document}
-\maketitle
+\maketitlepage
+\cleardoublepage
+\tableofcontents
+%\listoffigures
+%\listoftables
 
+%first page
+\clearpage
+\maketitle
 \begin{abstract}
-Your abstract should summarize the objective of your capstone project.  A good guideline is to include a one sentence summary for each section of the report, and dedicate slightly more space to report the results.  Provide specific numerical results or performance measures when possible.  It should be self-contained and as close to 250 words as possible (can be check by highlighting and selecting Review/Word Count. 
+Your abstract should summarize the objective of your capstone project, briefly explain its importance in context of the broader engineering landscape, summarize the final design and highlight significant results or performance measures.
 \end{abstract}
 
-%\tableofcontents
-
 \section{1. Introduction}
-
 \subsection{1.1. Customer Interview}
 Our customer is Dr. William Sandberg, who is currently a professor at George Mason University and a maritime research specialist. He works with RDSA and has experience in foils and fins as they relate to our project. Depending on the success of our project, one of his potential plans for our product is to forward the design to government contractors for further development or research purposes. He will also potentially use this in his own research or instruction. The highlights from our interview include the matriculation and application our project will have, the difficulty of waterproofing, the material of the fins and outer body, an advised timeline, and greater insight on the movement of the fins. We found that these types of projects are the foundation of work much later that sees real application and use. Waterproofing came up as a serious risk in terms of the design feasibility of our project, we came to the conclusion modularity needs to take priority in our design to combat the difficulty of waterproofing. We found that through our consultation the opportunities for design are not limited due to the resources at our disposal to create inexperienced materials/ components for our project. We came to the conclusion that in order to effectively design our bot we need to structure the design process to effectively incorporate modularity and a process of feedback. Finally we were advised on various prevalent research that will be useful in our design of our finned bot. Our point of view statement is: A mission platform conducting surface or undersea operations needs to be able to maneuver a deployed UAV accurately at low speeds in order to recover them in a way that is much safer and cost-effective than the current means. 
 
@@ -403,11 +417,7 @@ Fin system that allows the fin to be flexible or rigid upon command
 Our winning design is Design Concept One. It was ranked highest overall based on our objectives of controllability, maneuverability, beach transition, modularity, and cost. 
 
 \section{5. Ethical Considerations}
-Briefly list the ethical issues or responsibilities that apply to this project, such as safety, documentation, or potential unethical ways in which the product could be used
-Describe some ways in which those issues shaped your proposal.
-Connect these considerations to the considerations from Section 1.2 Motivation.
-
-  Incorporate the IEEE Code of Ethics or the Professional Engineer’s Code into your discussion when possible. 
+Briefly discuss ethical issues that impacted your design approach.  Incorporate the \emph{IEEE Code of Ethics}\footnote{IEEE Code of Ethics is available online at \url{https://www.ieee.org/about/corporate/governance/p7-8.html}} or the \emph{Professional Engineer’s Code}\footnote{The NSPE Code of Ethics is availble online at \url{https://www.nspe.org/resources/ethics/code-ethics}} into your discussion when possible.
 
 \section{6. Engineering Standards and Specifications}
 Discuss an engineering standard or specification that is applicable to at least one component of your design.
@@ -473,54 +483,68 @@ Present the results of your benchtop testing.
 %[1] 	N. Mazouchova, P. B. Umbanhowar, and D. I. Goldman, “Flipper-driven terrestrial locomotion of a sea turtle-inspired robot,” Bioinspiration & Biomimetics, vol. 8, no. 2, p. 026007, 2013. 
 %[2]	S. C. Licht, “Biomimetic oscillating foil propulsion to enhance underwater vehicle agility and maneuverability,” 2008. 
 %[3]	 C. Siegenthaler, C. Pradalier, F. Gunther, G. Hitz, and R. Siegwart, “System integration and fin trajectory Design for a robotic sea-turtle,” 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems, 2013. 
+%\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,turtlebot.bib}
 
+
+\clearpage
 \appendix
-\section{Formatting and Style Guidelines}
+\section{Formatting and Style Guidelines}\label{app-style}
 Appendices are optional and should appear at the end. You may have several appendices if necessary, to include computer programs, large data sets, or detailed drawings. Be sure to note the existence of any appendices or enclosures within the relevant portion of the report text.  
 
-This appendix provides stylistic guidelines. % and MSWord tips on creating linked and cross referenced documents. Fuck MSWord 
+This appendix provides stylistic guidelines and \LaTeX\ tips on creating linked and cross referenced documents.  
 
 \subsection{Abbreviations and Acronyms}
-Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
+Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
 
 \subsection{Units}
-The use of SI units is encouraged. English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as “3.5-inch disk drive”. Use a zero before decimal points: “0.25”, not “.25”. Use “cm3”, not “cc”.
- 
+The use of SI units is encouraged. English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''. Use a zero before decimal points: ``0.25'', not ``.25''. Use ``\si{\centi\meter\cubed}'', not ``cc''. In \LaTeX, you can use the \lstinline{siunitx} package to ensure units are done correctly. 
+
 \subsection{Equations}
-Number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (2). Punctuate equations with commas or periods when they are part of a sentence, as in
-%		α  + β  = χ.					        (2)
-Note that the equation is centered. Be sure that the symbols in your equation have been defined before or immediately following the equation. Use “(2)”, not “Eq. (2)” or “equation (2)”, except at the beginning of a sentence: “Equation (2) is . . .”
+\LaTeX will automatically number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (\ref{eq2}). Punctuate equations with commas or periods when they are part of a sentence, as in
+\begin{equation}
+\alpha + \beta = \chi.
+\label{eq2}
+\end{equation}
+Note that the equation is centered. Be sure that the symbols in your equation have been defined before or immediately following the equation. For IEEE format, use ``(\ref{eq2})'', not ``Eq. (\ref{eq2})'' or ``equation (\ref{eq2})'', except at the beginning of a sentence: ``Equation (\ref{eq2}) is ...''For non-IEEE formats, equation~\ref{eq2} is sufficient. 
 
 \subsection{Figures and Tables}
-Place figures and tables at the top and bottom of pages. Avoid placing them in the middle of pages. Figure captions should be below the figures as shown in Figure 6; table captions should appear above the tables as shown Table 1. To insert captions select from the MS Word toolbar References/Insert Caption.  Reference the figure in the text by choosing the Insert tab and selecting Cross-reference from the Links sub-tab.  Choose the reference type that you want and be sure to select the appropriate entry in the Insert reference to pull-down list.  This will only work if you have used Insert Caption with the figure or table. This can be achieved by right-clicking on the item or from the References Menu.
-%
-%Table 1 Captioned Table
-%Table Head
-%Table Column Head
-%
-%Table column subhead
-%Subhead
-%Subhead
-%copy
-%More table copya
+Place figures and tables at the top and bottom of pages. Avoid placing them in the middle of pages. Figure captions should be below the figures as shown in Figure~\ref{f6}; table captions should appear above the tables as shown Table~\ref{t1}. In \LaTeX, the environments to include figures and tables are \lstinline{figure} and \lstinline{table}, respectively (together they are sometimes called ``floats''). 
 
-%
-%
-%
-%Figure 6 Presentation of the Marsh Award, which is given each year to the best 1/C  Robotics and Control Engineering project in memory of ENS David R.  Marsh, USNA Class of 1987, in honor of his enthusiasm for his 1/C project, a voice activated robot.
+To insert captions, use the \lstinline{caption} command within the body of your figure or table.  After the caption, provide a \lstinline|\label{labelname}| that you will use to refer to the figure.  Reference the figure in the text by using the text \lstinline|\ref{labellname}|.  This also works for referring to other sections of the text, etc. 
 
-Axis Labels: Use 8 point Times New Roman for axis label or titles. Use words rather than symbols or abbreviations to avoid confusing the reader. As an example, write the quantity “Magnetization”, or “Magnetization, M”, not just “M”. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write “Magnetization (A/m)” or “Magnetization {A[m(1)]}”, not just “A/m”. 
+\begin{table}[hpt]
+\caption{Captioned Table}
+\label{t1}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+ & col1 & col2 \\
+\midrule
+row1 & 1 & 2 \\
+row2 & 3 & 4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{figure}[hpb]
+\begin{center}
+\includegraphics{figures/f6.png}
+\end{center}
+\caption{Presentation of the 2007 Marsh Award, which is given each year to the best 1/C Systems Engineering project in memory of ENS David R.  Marsh, USNA Class of 1987, in honor of his enthusiasm for his 1/C project, a voice activated robot.}
+\label{f6}
+\end{figure}
+
+When composing your figures in Inkscape or Adobe Illustrator, use 8 point Arial or Times New Roman for axis label or titles. Use words rather than symbols or abbreviations to avoid confusing the reader. As an example, write the quantity ``Magnetization'', or ``Magnetization, $M$'', not just ``$M$''. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write ``Magnetization (\si{\ampere\per\meter})'' not just ``\si{\ampere\per\meter}''. Scale the figure appropriately for one or two columns so that they are readable, with thick enough lines and markers, etc. 
+
+With \lstinline{.svg} files, it is possible to include \LaTeX\ and to have it automatically match the font and size with the body of the text when using \lstinline{includesvg}. 
 
 \subsection{References}
-Fuck Word. Use Bibtex. 
-%Note that, while Word includes many bibliography-building tools, one of the easiest methods to build a lengthy reference list is to move to the end of your document and start a new list of references formatted as follows:
-%1)  Click on the HOME tab at the top of the Word window
-%2)  In the Paragraph sub-window, click on the down arrow next to the numbered list layout.
-%3)  Click on the format that shows [#], OR, if that format is not available, select “Define New Number Format” from the bottom of the pop-up window.
-%4)  If you had to define a new number format, select the “Number style” as “1, 2, 3, …” and change the “Number format” to [1] by typing the [ and the ] around the 1, and removing any other punctuation, as shown at right.  Select OK when done.
-%5)  Type entries onto the list.  It will automatically update.
-%6)  To cross-reference the list, use the method described above in the section on Figures and Tables.
-%The reference/bibliography standard used in our discipline is published by IEEE, a professional engineering society dedicated to control systems, robotics, electronics, etc.  The following examples are provided in the reference section.  Note: parenthetical descriptions do not need to be included in your reference entries. 
+Use \lstinline{bibtex}, it's much easier than using the thing built into Word. If you enter things correctly, it will handle the formatting for you. It will also automatically and correctly number the citations. The file \lstinline{example.bib} gives examples of how to code the bibliographic entries. 
+
+To cite them, within the body of your text use the \lstinline|\cite{refname}| command. \LaTeX\ will automatically sort, number, etc. IEEE formats use a reference number within brackets, e.g. \cite{young1964synthetic}. The format of bibliography references can be changed using the \lstinline|\bibliographystyle| command. You may wish to do so if biology-style (Author, 2018) parenthetical references are more appropriate for your subject, for example. 
 
 \end{document}
 

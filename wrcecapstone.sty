@@ -28,7 +28,10 @@
   colorlinks=true,
   linkcolor=violet,
   urlcolor=blue,
-  citecolor=blue}
+  citecolor=blue,
+  filecolor=blue}
+\usepackage{url}
+
 
 \usepackage[plain]{fancyref}
 \renewcommand{\freffigname}{Fig.}
@@ -40,13 +43,13 @@
 
 \usepackage{listings}
 \lstset{
-	basicstyle=\ttfamily,
+	basicstyle=\small\ttfamily,
 	columns=fullflexible,
 	showstringspaces=false
 }
 \lstdefinestyle{mbedC}{
 	language=C,
-	basicstyle=\ttfamily,
+	basicstyle=\small\ttfamily,
 	keywordstyle=\color{blue}\ttfamily,
 	stringstyle=\color{magenta}\ttfamily,
 	commentstyle=\color{green}\ttfamily,
@@ -57,7 +60,7 @@
 %	frame=single
 }
 \lstdefinestyle{usnaMatlab}{
-	basicstyle=\ttfamily,
+	basicstyle=\small\ttfamily,
 	keywordstyle=\color{blue}\ttfamily,
 	stringstyle=\color{magenta}\ttfamily,
 	commentstyle=\color{green}\ttfamily,
@@ -70,5 +73,79 @@
 }
 
 \usepackage[noadjust]{cite}
+\usepackage[USenglish]{isodate}
+\dateinputformat{USenglish}
 
+\newcommand{\thecoursenumber}{EW495 or EW496}
+\newcommand{\coursenumber}[1]{\renewcommand{\thecoursenumber}{#1}}
+
+\newcommand{\thestudent}{MIDN 1/c Student}
+\newcommand{\student}[1]{\renewcommand{\thestudent}{#1}}
+
+\newcommand{\theadvisor}{Assistant Professor Indiana Jones}
+\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}
+
+\newcommand{\thedeptchair}{Professor J. A. Piepmeier}
+\newcommand{\deptchair}[1]{\renewcommand{\thedeptchair}{#1}}
+
+\newcommand{\thecoverpicture}{\includegraphics[width=0.75\columnwidth]{RCE-logo-01.png}}
+\newcommand{\coverpicture}[1]{\renewcommand{\thecoverpicture}{#1}}
+
+\newcommand{\maketitlepage}{
+%\onecolumn
+\begin{figure*}[p]
+\makeatletter
+\begin{center}
+\noindent {\Huge \@title}\\
+\vspace{2em}
+\noindent \textbf{\thecoursenumber\ Final Report}\\
+\vspace{2em}
+\thecoverpicture\\
+\vspace{2em}
+\noindent \textbf{Authors:} \thestudent\\
+\noindent \textbf{Date:} \@date\\
+\end{center}
+\end{figure*}
+\begin{table*}[p]
+\begin{center}
+\begin{tabular}{p{4in}p{1.5in}}
+\textbf{Advisor:} \theadvisor & \\
+& \\
+& \\
+& \\
+\makebox[4in]{\hrulefill} & \makebox[1.5in]{\hrulefill} \\
+\setlength\extrarowheight{0pt}
+Signature & Date \\
+& \\
+\textbf{Department Chair:} \thedeptchair & \\
+& \\
+& \\
+& \\
+\makebox[4in]{\hrulefill} & \makebox[1.5in]{\hrulefill} \\
+Signature & Date \\
+\end{tabular}
+\end{center}
+\end{table*}
+%\twocolumn
+\clearpage
+\makeatother
+}
+
+\newcommand{\thecontactinfo}{}
+\def\hascontactinfo{0}
+\newcommand{\contactinfo}[1]{\renewcommand{\thecontactinfo}{#1}\def\hascontactinfo{1}}
+
+\renewcommand{\maketitle}{%
+\makeatletter
+\noindent{\LARGE \textbf{\@title}}\\
+\vspace{1em}
+\hrule
+\vspace{1em}
+\noindent \@author\\
+\if\hascontactinfo0
+\else
+\noindent Contact: \thecontactinfo\\
+\fi
+\makeatother
+}
 
